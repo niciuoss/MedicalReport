@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using MedicalReports.API.Data;
+using MedicalReports.API.Middleware;
 using MedicalReports.API.Models;
 using MedicalReports.API.Services;
 
@@ -78,6 +79,18 @@ using (var scope = app.Services.CreateScope())
         });
         db.SaveChanges();
     }
+
+    // Cria o registro de licença se não existir
+    if (!db.LicenseConfigs.Any())
+    {
+        db.LicenseConfigs.Add(new LicenseConfig
+        {
+            LicenseKey = 1,
+            ActivatedAt = DateTime.UtcNow,
+            ExpiresAt = DateTime.UtcNow.AddDays(30),
+        });
+        db.SaveChanges();
+    }
 }
 
 if (app.Environment.IsDevelopment())
@@ -88,6 +101,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseStaticFiles();
 app.UseCors("AllowFrontend");
+app.UseMiddleware<LicenseMiddleware>();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();

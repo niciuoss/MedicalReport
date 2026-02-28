@@ -15,13 +15,16 @@ api.interceptors.request.use(config => {
   return config;
 });
 
-// Redireciona para login em caso de 401
+// Trata 401 (sessão expirada) e 402 (licença expirada)
 api.interceptors.response.use(
   response => response,
   error => {
     if (error.response?.status === 401) {
       removeToken();
       window.location.href = '/login';
+    }
+    if (error.response?.status === 402) {
+      window.location.href = '/licenca-expirada';
     }
     return Promise.reject(error);
   }

@@ -9,7 +9,7 @@ import { getToken } from '@/lib/auth';
 export function ClientLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
-  const isLoginPage = pathname === '/login';
+  const isLoginPage = pathname === '/login' || pathname === '/licenca-expirada';
   const [ready, setReady] = useState(false);
 
   useEffect(() => {

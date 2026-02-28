@@ -22,6 +22,28 @@ namespace MedicalReports.API.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("MedicalReports.API.Models.LicenseConfig", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("LicenseKey")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("ActivatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("ExpiresAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("LicenseConfigs");
+                });
+
             modelBuilder.Entity("MedicalReports.API.Models.User", b =>
                 {
                     b.Property<int>("Id")

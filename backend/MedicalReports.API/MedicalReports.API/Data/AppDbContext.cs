@@ -11,6 +11,7 @@ public class AppDbContext : DbContext
     public DbSet<User> Users => Set<User>();
     public DbSet<Patient> Patients => Set<Patient>();
     public DbSet<MedicalReport> MedicalReports => Set<MedicalReport>();
+    public DbSet<LicenseConfig> LicenseConfigs => Set<LicenseConfig>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
