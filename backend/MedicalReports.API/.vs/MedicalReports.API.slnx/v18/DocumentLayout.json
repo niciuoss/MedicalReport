@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Vinicius\\Documents\\Github\\Laudo\\backend\\MedicalReports.API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{01399EEC-FC9D-9A21-C7E5-480D067F25E8}|MedicalReports.API\\MedicalReports.API.csproj|c:\\users\\vinicius\\documents\\github\\laudo\\backend\\medicalreports.api\\medicalreports.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{01399EEC-FC9D-9A21-C7E5-480D067F25E8}|MedicalReports.API\\MedicalReports.API.csproj|solutionrelative:medicalreports.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01399EEC-FC9D-9A21-C7E5-480D067F25E8}|MedicalReports.API\\MedicalReports.API.csproj|c:\\users\\vinicius\\documents\\github\\laudo\\backend\\medicalreports.api\\medicalreports.api\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{01399EEC-FC9D-9A21-C7E5-480D067F25E8}|MedicalReports.API\\MedicalReports.API.csproj|solutionrelative:medicalreports.api\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Vinicius\\Documents\\Github\\Laudo\\backend\\MedicalReports.API\\MedicalReports.API\\appsettings.json",
+              "RelativeDocumentMoniker": "MedicalReports.API\\appsettings.json",
+              "ToolTip": "C:\\Users\\Vinicius\\Documents\\Github\\Laudo\\backend\\MedicalReports.API\\MedicalReports.API\\appsettings.json",
+              "RelativeToolTip": "MedicalReports.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-27T23:50:58.451Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\Users\\Vinicius\\Documents\\Github\\Laudo\\backend\\MedicalReports.API\\MedicalReports.API\\Dockerfile",
+              "RelativeDocumentMoniker": "MedicalReports.API\\Dockerfile",
+              "ToolTip": "C:\\Users\\Vinicius\\Documents\\Github\\Laudo\\backend\\MedicalReports.API\\MedicalReports.API\\Dockerfile",
+              "RelativeToolTip": "MedicalReports.API\\Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-27T23:13:09.369Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

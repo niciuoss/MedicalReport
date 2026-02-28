@@ -1,0 +1,55 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: laudos_db
+    restart: always
+    environment:
+      POSTGRES_DB: laudos_medicos
+      POSTGRES_USER: laudos_user
+      POSTGRES_PASSWORD: laudos_pass
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U laudos_user -d laudos_medicos"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend/MedicalReports.API/MedicalReports.API
+      dockerfile: Dockerfile
+    container_name: laudos_api
+    restart: always
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_URLS: http://+:5000
+      ConnectionStrings__DefaultConnection: "Host=postgres;Port=5432;Database=laudos_medicos;Username=laudos_user;Password=laudos_pass"
+      Jwt__Key: "laudos-medicos-super-secret-key-32-chars!!"
+    ports:
+      - "5000:5000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./backend/MedicalReports.API/MedicalReports.API/wwwroot/images:/app/wwwroot/images
+
+  frontend:
+    build:
+      context: ./frontend/medical-reports-web
+      dockerfile: Dockerfile
+    container_name: laudos_web
+    restart: always
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:5000
+    ports:
+      - "3001:3000"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
